@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSI</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="centered-flex-container">
-      <form class="centered-flex-container" action="http://localhost:5001/sendemail" method="POST">
+    <main class="flex center">
+      <form class="flex" action="http://localhost:5001/sendemail" method="POST">
+        <label for="email">Email</label>
+        <input type="email" name="sender" placeholder="Optional..." id="sender" />
+        <label for="message">Message</label>
         <textarea name="message" id="message" required></textarea>
         <button type="submit">Send</button>
       </form>

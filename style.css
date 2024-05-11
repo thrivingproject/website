@@ -1,11 +1,13 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
   margin: 0;
 }
-.centered-flex-container {
+.flex {
   display: flex;
+}
+.center {
   justify-content: center;
   align-items: center;
 }
@@ -18,14 +20,17 @@ article {
 }
 form {
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 textarea {
   resize: none;
   height: 10rem;
-  padding: 1rem;
   width: 90vw;
   max-width: 800px;
+}
+textarea,
+input {
+  padding: 0.5rem;
 }
 button {
   padding: 0.5rem 1rem;
@@ -33,11 +38,20 @@ button {
   border: none;
   cursor: pointer;
   width: 100px;
+  align-self: center;
+  margin-top: 1rem;
+  border-radius: 3%;
 }
 /* use dark/light based on users web browser settings */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #121212;
     color: #fff;
+  }
+  textarea,
+  input {
+    background-color: #333;
+    color: #fff;
+    border: solid 1px #a2a2a2;
   }
 }

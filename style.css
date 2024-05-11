@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+article {
+  padding: 3rem;
+  text-align: center;
+}
+/* use dark/light based on users web browser settings */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #fff;
+  }
+}

@@ -9,7 +9,7 @@ def send_email(message, user):
     body = f"{message}\n\nSender: {user}"
 
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"New website message!"
+    msg["Subject"] = "New website message!"
     msg["From"] = email
     msg["To"] = os.getenv("MAIL_USERNAME")
     msg.attach(MIMEText(body, "plain"))

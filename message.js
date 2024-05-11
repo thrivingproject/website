@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function sendEmail() {
+    console.log('Sending email...');
     const name = document.getElementById('name').value;
     const message = document.getElementById('message').value;
 
@@ -14,7 +15,7 @@ function sendEmail() {
     formData.append('message', message);
 
     // Specify the full URL to your Flask endpoint
-    fetch('http://example-backend.com/api/sendemail', {
+    fetch('127.0.0.1:5000/sendemail', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

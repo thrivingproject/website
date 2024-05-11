@@ -8,11 +8,10 @@
   </head>
   <body>
     <main class="centered-flex-container">
-      <form class="centered-flex-container" id="messageForm">
-        <textarea id="message" required></textarea>
+      <form class="centered-flex-container" action="http://localhost:5001/sendemail" method="POST">
+        <textarea name="message" id="message" required></textarea>
         <button type="submit">Send</button>
       </form>
     </main>
-    <script src="message.js"></script>
   </body>
 </html>

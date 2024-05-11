@@ -6,16 +6,13 @@ from email.mime.multipart import MIMEMultipart
 def send_email(message, user):
     user = user or "anonymous"
     email = os.getenv("MAIL_USERNAME")
+    body = f"{message}\n\nSender: {user}"
 
     msg = MIMEMultipart("alternative")
     msg["Subject"] = f"New website message!"
     msg["From"] = email
     msg["To"] = os.getenv("MAIL_USERNAME")
-
-    text = f"{message}\n\nSender: {user}"
-
-    msg.attach(MIMEText(text, "plain"))
-    print(msg.as_string(), msg)
+    msg.attach(MIMEText(body, "plain"))
 
     server = smtplib.SMTP(os.getenv("MAIL_SERVER"), 587)
     server.starttls()

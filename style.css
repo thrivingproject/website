@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+  }
+/* use dark/light based on users web browser settings */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #fff;
+  }
+  textarea,
+  input {
+    background-color: #333;
+    color: #fff;
+    border: solid 1px #a2a2a2;
+  }
+  a {
+    color: #73ffd0;
+  }
+}
+body {
+  margin: 0;
+}
+.flex {
+  display: flex;
+}
+/* Don't change clicked link color */
+/* a:visited {
+  color: none;
+} */
+.center {
+  justify-content: center;
+  align-items: center;
+}
+main {
+  height: 100vh;
+}
+article {
+  padding: 3rem;
+  text-align: center;
+}
+form {
+  flex-direction: column;
+  gap: 1rem;
+}
+textarea {
+  resize: none;
+  height: 10rem;
+  width: 90vw;
+  max-width: 800px;
+}
+textarea,
+input {
+  padding: 0.5rem;
+}
+button {
+  padding: 0.5rem 1rem;
+  background-color: #73ffd0;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  align-self: center;
+  margin-top: 1rem;
+  border-radius: 3%;
+}

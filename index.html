@@ -4,39 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSI</title>
-    <style>
-      body {
-        margin: 0;
-        height: 100vh;
-        align-content: center;
-      }
-      article {
-        padding: 3rem;
-        text-align: center;
-      }
-      em {
-        /* style like link */
-        color: #007bff;
-        text-decoration: underline;
-        cursor: pointer;
-      }
-      /* use dark/light based on users web browser settings */
-      @media (prefers-color-scheme: dark) {
-        body {
-          background-color: #121212;
-          color: #fff;
-        }
-      }
-    </style>
-    <!-- import script.js -->
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="haiku.js" defer></script>
   </head>
   <body>
-    <main>
+    <main class="flex center">
       <article>
         <h3 style="margin-top: 0;">Christian Isaman</h3>
         <p>Full-Stack Software Engineer</p>
-        <em>click to see email</em>
+        <a href="message.html">
+          <em>Send me a message</em>
+        </a>
       </article>
     </main>
   </body>

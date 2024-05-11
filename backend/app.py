@@ -1,9 +1,7 @@
-import smtplib, os
+import os
 import requests
 from flask import Flask, redirect, request
 from dotenv import load_dotenv
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 
 app = Flask(__name__)
 load_dotenv()

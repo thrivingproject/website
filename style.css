@@ -1,15 +1,38 @@
+* {
+    box-sizing: border-box;
+}
 body {
   margin: 0;
 }
+.centered-flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  height: 100vh;
 }
 article {
   padding: 3rem;
   text-align: center;
+}
+form {
+  flex-direction: column;
+  gap: 1.5rem;
+}
+textarea {
+  resize: none;
+  height: 10rem;
+  padding: 1rem;
+  width: 90vw;
+  max-width: 800px;
+}
+button {
+  padding: 0.5rem 1rem;
+  background-color: #73ffd0;
+  border: none;
+  cursor: pointer;
+  width: 100px;
 }
 /* use dark/light based on users web browser settings */
 @media (prefers-color-scheme: dark) {

@@ -1,24 +1,24 @@
-import smtplib
+import smtplib, os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-def send_email(message):
-    sender_email = "your-email@gmail.com"  # Your email
-    receiver_email = "your-email@example.com"  # Your email, or where you want to receive messages
-    password = "your-password"  # Your email account password
+
+def send_email(message, user):
+    user = user or "anonymous"
+    email = os.getenv("MAIL_USERNAME")
 
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = "New Contact Form Message"
-    msg["From"] = sender_email
-    msg["To"] = receiver_email
+    msg["Subject"] = f"New website message!"
+    msg["From"] = email
+    msg["To"] = os.getenv("MAIL_USERNAME")
 
-    text = "You received a message from {}: {}".format(name, message)
-    part1 = MIMEText(text, "plain")
+    text = f"{message}\n\nSender: {user}"
 
-    msg.attach(part1)
+    msg.attach(MIMEText(text, "plain"))
+    print(msg.as_string(), msg)
 
-    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server = smtplib.SMTP(os.getenv("MAIL_SERVER"), 587)
     server.starttls()
-    server.login(sender_email, password)
-    server.sendmail(sender_email, receiver_email, msg.as_string())
+    server.login(email, os.getenv("MAIL_PASSWORD"))
+    server.sendmail(email, email, msg.as_string())
     server.quit()

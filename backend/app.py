@@ -11,7 +11,7 @@ def handle_send_email():
     This function emulates traditional (1990s) handling of form POST requests.
     """
     send_email(request.form.get("message"), request.form.get("email"))
-    return redirect("http://www.christianisaman.com")
+    return redirect(os.getenv("FRONTEND_SERVER_DOMAIN"))
 
 
 def send_email(message, user):
@@ -31,6 +31,12 @@ def send_email(message, user):
 
 if __name__ == "__main__":
     import os
+    from os import path
     from dotenv import load_dotenv
-    load_dotenv()
+
+    env_file = path.join(path.dirname(path.realpath(__file__)), "env/.env")
+
+    load_dotenv(env_file)
+
+    print(os.getenv("FRONTEND_SERVER_DOMAIN"))
     app.run(debug=True, port=5001)

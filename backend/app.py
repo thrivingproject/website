@@ -30,7 +30,6 @@ def send_email(message, user):
 
 
 if __name__ == "__main__":
-    import os
     from os import path
     from dotenv import load_dotenv
 

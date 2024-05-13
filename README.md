@@ -19,5 +19,5 @@ Open command pallette: `Ctrl + Shift + P`, select `Live Preview: Start Server`.
 ### Backend
 
 ```bash
-py backend/app.py
+py backend/flask_app.py
 ```

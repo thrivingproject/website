@@ -1,21 +1,5 @@
 * {
-    box-sizing: border-box;
-  }
-/* use dark/light based on users web browser settings */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #fff;
-  }
-  textarea,
-  input {
-    background-color: #333;
-    color: #fff;
-    border: solid 1px #a2a2a2;
-  }
-  a {
-    color: #73ffd0;
-  }
+  box-sizing: border-box;
 }
 body {
   margin: 0;
@@ -23,16 +7,16 @@ body {
 .flex {
   display: flex;
 }
-/* Don't change clicked link color */
-/* a:visited {
-  color: none;
-} */
 .center {
   justify-content: center;
   align-items: center;
 }
 main {
   height: 100vh;
+}
+a,
+a:visited {
+  color: #ff00ff;
 }
 article {
   padding: 3rem;
@@ -54,11 +38,33 @@ input {
 }
 button {
   padding: 0.5rem 1rem;
-  background-color: #73ffd0;
+  background-color: #ff00ff;
+  color: white;
   border: none;
   cursor: pointer;
   width: 100px;
   align-self: center;
   margin-top: 1rem;
   border-radius: 3%;
+}
+/* use dark/light based on users web browser settings */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #fff;
+  }
+  textarea,
+  input {
+    background-color: #333;
+    color: #fff;
+    border: solid 1px #a2a2a2;
+  }
+  a,
+  a:visited {
+    color: #73ffd0;
+  }
+  button {
+    background-color: #73ffd0;
+    color: black;
+  }
 }

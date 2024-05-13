@@ -12,6 +12,8 @@
 python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
 ```
 
+Set the `action` attribute of the form to `http://127.0.0.1:5001/sendemail` in `index.html`.
+
 ### Frontend
 
 Open command pallette: `Ctrl + Shift + P`, select `Live Preview: Start Server`.

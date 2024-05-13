@@ -37,5 +37,4 @@ if __name__ == "__main__":
 
     load_dotenv(env_file)
 
-    print(os.getenv("FRONTEND_SERVER_DOMAIN"))
     app.run(debug=True, port=5001)
